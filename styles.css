@@ -1,0 +1,109 @@
+/* General styles */
+body {
+    background-color: #fffdd0; /* cream background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar / Header */
+header {
+    background-color: #006400; /* deep green */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav {
+    background-color: #228B22; /* lighter green */
+    padding: 0.5rem;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    color: yellow;
+}
+
+/* Forms */
+form {
+    max-width: 450px;
+    margin: 20px auto;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+form input, form select, form button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+form button {
+    background-color: #228B22;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+form button:hover {
+    background-color: #006400;
+}
+
+/* Tables */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+}
+table th {
+    background: #006400;
+    color: white;
+    padding: 12px;
+}
+table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Flash messages */
+.alert {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Buttons */
+.btn-red {
+    background-color: red;
+    color: white;
+}
+.btn-yellow {
+    background-color: gold;
+    color: black;
+}

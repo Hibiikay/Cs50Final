@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}Register{% endblock %}
+{% block main %}
+  <h2>Register</h2>
+  <form method="post" action="{{ url_for('register') }}">
+    <label>Full name</label><br>
+    <input name="name" required><br><br>
+    <label>Email</label><br>
+    <input name="email" type="email" required><br><br>
+    <label>Do you want to play in the football match?</label><br>
+    <select name="play" required>
+      <option value="yes">Yes (you must upload ₦15,000 receipt)</option>
+      <option value="no">No (supporter)</option>
+    </select><br><br>
+    <button class="btn" type="submit">Register</button>
+  </form>
+{% endblock %}

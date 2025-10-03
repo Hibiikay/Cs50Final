@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block main %}
+  <section class="hero">
+    <h2>Welcome to the Hunger Football Charity</h2>
+    <p>Play or support. Players: upload ₦15,000 receipt to qualify (this covers customised jersey + donation).</p>
+    <p><a class="btn" href="{{ url_for('register') }}">Register Now</a></p>
+  </section>
+{% endblock %}
+

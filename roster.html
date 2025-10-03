@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}Roster{% endblock %}
+{% block main %}
+  <h2>Player Roster (admin)</h2>
+  <table border="1" cellpadding="6">
+    <thead>
+      <tr><th>Name</th><th>Email</th><th>Player ID</th><th>Club</th><th>Receipt</th></tr>
+    </thead>
+    <tbody>
+      {% for p in players %}
+        <tr>
+          <td>{{ p.name }}</td>
+          <td>{{ p.email }}</td>
+          <td>{{ p.player_id }}</td>
+          <td>{{ p.club or "TBD" }}</td>
+          <td>
+            {% if p.receipt %}
+              <a target="_blank" href="{{ url_for('static', filename='receipts/' ~ p.receipt) }}">View</a>
+            {% else %}
+              (none)
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

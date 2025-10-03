@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Hunger Football{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <h1>Food Bank Initiative</h1>
+        <h2>Hunger Football Drive Oct 11th, 2025</h2>
+        <nav>
+          <a href="{{ url_for('index') }}">Home</a> |
+          <a href="{{ url_for('register') }}">Register</a> |
+          <a href="{{ url_for('login_user') }}">User Login</a> |
+          <a href="{{ url_for('login_admin') }}">Admin Login</a> |
+          <a href="{{ url_for('leaderboard') }}">Leaderboard</a>
+          {% if session.get('admin') %}
+            | <a href="{{ url_for('roster') }}">Roster</a>
+            | <a href="{{ url_for('export_csv') }}">Export CSV</a>
+            | <a href="{{ url_for('export_pdf') }}">Export PDF</a>
+            | <a href="{{ url_for('logout') }}">Logout</a>
+          {% endif %}
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="flashes">
+            {% for m in messages %}
+              <li>{{ m }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      {% block main %}{% endblock %}
+    </main>
+  </body>
+</html>

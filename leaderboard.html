@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}Leaderboard{% endblock %}
+{% block main %}
+  <h2>Leaderboard</h2>
+  <p>Total cash donations: ₦{{ "%.2f"|format(total or 0) }}</p>
+  <table border="1" cellpadding="6">
+    <thead><tr><th>Donor</th><th>Total donated (₦)</th></tr></thead>
+    <tbody>
+      {% for r in rows %}
+        <tr><td>{{ r.donor }}</td><td>{{ "%.2f"|format(r.total or 0) }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
